@@ -16,5 +16,10 @@ public class ReviewsController {
 		return "reviews";
 	}
 	
+	@RequestMapping("/showReview")
+	public String showOne(Long id, Model model) {
+		return "review";
+	}
+	
 
 }
