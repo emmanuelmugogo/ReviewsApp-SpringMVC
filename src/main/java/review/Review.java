@@ -27,7 +27,14 @@ public class Review {
 	public String getContent() {
 		return content;
 	}
-	
-	
+
+	public Review(long id, String title, String imageUrl, String reviewCategory, String content) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.imageUrl = imageUrl;
+		this.reviewCategory = reviewCategory;
+		this.content = content;
+	}
 
 }
