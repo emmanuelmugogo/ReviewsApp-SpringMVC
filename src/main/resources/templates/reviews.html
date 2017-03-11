@@ -1,17 +1,31 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>ReviewMVC</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-    <h1 th:text = "Test"/>
-    
-    <tr th:each="repository : ${repositorys}">
-        <td th:text="${repository.id}">1</td>
-        <td><a href="#" th:text="${repository.title}">Title ...</a></td>
-        <td th:text="${repository.getTitle()}">Text ...</td>
-    </tr>
-    
-</body>
+    <head>
+        <title>My Reviews Collection</title>
+        <link rel="stylesheet" href="../css/review.css" th:href="@{/css/review.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Review Collections</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Image Url</th>
+                    <th>Review Category</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="repository : ${repositories}">
+			        <td th:text="${repository.getId()} ">1</td>
+			        <td th:text="${repository.getTitle()} ">Text ...</td>
+			        <td th:text="${repository.getImageUrl()}">Text</td>
+			        <td th:text="${repository.getReviewCategory()} ">Text ...</td>
+			        <td th:text="${repository.getContent()} ">Text</td>   
+			    </tr>
+            </tbody>
+        </table>
+    </body>
 </html>
