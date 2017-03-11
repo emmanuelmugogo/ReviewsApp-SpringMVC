@@ -1,10 +1,18 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>ReviewMVC</title>
+
+  <head>
+    <title>Review MVC</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-    <h1 th:text = "Test"/>
-</body>
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/review.css" th:href="@{/css/review.css}" />
+  </head>
+
+  <body>
+  
+    <p th:text=" ${repository.findOne(42).getTitle()}" />
+  
+  </body>
+
 </html>

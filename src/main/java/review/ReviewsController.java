@@ -9,15 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ReviewsController {
 	
 	@Resource
-	ReviewRepository repository;
+	ReviewRepository repositorys;
 	
 	@RequestMapping("/showReviews")
 	public String showAll(Model model) {
+		model.addAttribute("repositorys", repositorys.findAll());
 		return "reviews";
 	}
 	
 	@RequestMapping("/showReview")
 	public String showOne(Long id, Model model) {
+		model.addAttribute("repositorys", repositorys.findOne(id));
 		return "review";
 	}
 	
