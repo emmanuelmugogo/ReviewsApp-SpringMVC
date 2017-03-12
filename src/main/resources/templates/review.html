@@ -3,15 +3,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Review MVC</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" media="all" 
-          href="../../css/review.css" th:href="@{/css/review.css}" />
+      <title>Review MVC</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+      <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" media="all" href="../../css/review.css" th:href="@{/css/review.css}" />
   </head>
 
   <body>
+  <div class="container">
+  <hr/>
   
-    <p th:text=" ${repositories}" />
+	<br/> 
+	<div class="col-sm-6 col-md-4">
+	<p th:text="'ID: ' + ${repositories.id}" />
+    <p th:text="'Title: ' + ${repositories.title}" />
+    <p th:text="'Review Category: ' + ${repositories.reviewCategory}" />
+    <p th:text="'Content: ' + ${repositories.content}" />
+	</div> 
+    
+    <div class="col-sm-6 col-md-8">
+    	<img th:src="${repositories.imageUrl}" class="img-rounded" alt="Iphone" width="300" height="300" /> 
+    </div>
+    
+  </div>
+  
+  
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   
   </body>
 
