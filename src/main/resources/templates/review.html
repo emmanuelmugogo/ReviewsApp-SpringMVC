@@ -18,14 +18,14 @@
   
 	<br/> 
 	<div class="col-sm-6 col-md-4">
-	<p th:text="'ID: ' + ${repositories.id}" />
-    <p th:text="'Title: ' + ${repositories.title}" />
-    <p th:text="'Review Category: ' + ${repositories.reviewCategory}" />
-    <p th:text="'Content: ' + ${repositories.content}" />
+	<p th:text="'ID: ' + ${review.id}" />
+    <p th:text="'Title: ' + ${review.title}" />
+    <p th:text="'Review Category: ' + ${review.reviewCategory}" />
+    <p th:text="'Content: ' + ${review.content}" />
 	</div> 
     
     <div class="col-sm-6 col-md-8">
-    	<img th:src="${repositories.imageUrl}" class="img-rounded" alt="Iphone" width="300" height="300" /> 
+    	<img th:src="${review.imageUrl}" class="img-rounded" alt="Iphone" width="300" height="300" /> 
     </div>
     
   </div>

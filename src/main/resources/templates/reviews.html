@@ -16,13 +16,13 @@
         <h1>Review Collections</h1>
         <hr/>
         
- <div class = "row" th:each="repository : ${repositories}" >
+ <div class = "row" th:each="review : ${reviews}" >
    <div class = "col-sm-6 col-md-8 col-xs-6">
-   		<p th:text="${repository.id} ">1</p>
-        <p th:text="'Title: ' + ${repository.title} ">Text ...</p>
-        <p th:text="'Category: ' + ${repository.reviewCategory} ">Text ...</p>
-        <p th:text="'Content: ' + ${repository.content} ">Text</p>
-        <a th:href="@{http://localhost:8080/showReview(id=${repository.id})}">View More Details</a>
+   		<p th:text="${review.id} ">1</p>
+        <p th:text="'Title: ' + ${review.title} ">Text ...</p>
+        <p th:text="'Category: ' + ${review.reviewCategory} ">Text ...</p>
+        <p th:text="'Content: ' + ${review.content} ">Text</p>
+        <a th:href="@{http://localhost:8080/showReview(id=${review.id})}">View More Details</a>
         <hr/>
         
    </div>
