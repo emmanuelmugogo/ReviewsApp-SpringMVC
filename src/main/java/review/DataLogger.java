@@ -29,7 +29,7 @@ public class DataLogger implements CommandLineRunner {
 		Set<Category> categories = categoryRepo.findAll();
 		log.info("Categories:");
 		for(Category category: categories) {
-			String msg = String.format("%s for review %s", category, category.getReview());
+			String msg = String.format("%s for review %s", category, category.getReviews());
 			log.info(msg);
 		}
 	}
