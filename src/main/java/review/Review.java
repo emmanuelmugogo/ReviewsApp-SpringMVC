@@ -15,15 +15,16 @@ public class Review {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
 	private String title;
 	private String imageUrl;
 	private String reviewCategory;
 	private String content;
 	
-	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER) //mapped by refering review to categories.rev....
+	@OneToMany(targetEntity = Category.class) 
 	private Collection<Category> categories;
 	
-	//spring jpa requires no arg contructor
+	//spring jpa requires no arg constructor
 	protected Review() {
 		
 	}

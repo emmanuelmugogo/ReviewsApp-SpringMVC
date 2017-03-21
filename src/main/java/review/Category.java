@@ -3,6 +3,7 @@ package review;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ public class Category {
 	
 	private String categoryTitle;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = Review.class)
 	private Collection<Review> reviews;  //this need to be a Collection of Review instances
 	
 	//constructor for spring

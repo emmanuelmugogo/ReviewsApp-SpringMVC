@@ -1,28 +1,47 @@
 package review;
 
+import java.util.List;
+
 import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/reviews")
 public class ReviewsController {
 	
 	@Resource
-	ReviewRepository repositories;
+	ReviewRepository reviewRepository;
 	
-	@RequestMapping("/showReviews")
-	public String showAll(Model model) {
-		model.addAttribute("reviews", repositories.findAll());
-		return "reviews";
+	
+	@GetMapping(value = "/all")
+	public List<Review> showAll() {
+		return reviewRepository.findAll();
 	}
 	
-	@RequestMapping("/showReview")
-	public String showOne(@RequestParam ("id") Long id, Model model) {
-		model.addAttribute("review", repositories.findOne(id));
-		return "review";
+	@RequestMapping("/{title}")
+	public List<Review> showReviewByTitle(@PathVariable final String title) {
+		return reviewRepository.findByTitle(title);
 	}
 	
+	@GetMapping(value = "/{id}")
+	public Review showReview(@PathVariable Long id)	{
+		return reviewRepository.findOne(id);
+	}
+	
+	@PostMapping(value = "/load")
+	public List<Review> load(@RequestBody final Review review) {
+		reviewRepository.save(review);
+		return reviewRepository.findByTitle(review.getTitle());
+	}
 
 }
