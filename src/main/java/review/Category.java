@@ -7,7 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -16,9 +16,12 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String categoryTitle;
+	private String title;
 	
-	@ManyToOne(targetEntity = Review.class)
+	// mappedBy: because in the database, things point the other direction
+	// mappedBy "category" is referring to Categories.review
+	
+	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
 	private Collection<Review> reviews;  //this need to be a Collection of Review instances
 	
 	//constructor for spring
@@ -27,12 +30,12 @@ public class Category {
 	
 	//constructor
 	public Category(String categoryTitle, Collection<Review> reviews) {
-		this.categoryTitle = categoryTitle;
+		this.title = categoryTitle;
 		this.reviews = reviews;
 	}
 
-	public String getCategoryTitle() {
-		return categoryTitle;
+	public String getTitle() {
+		return title;
 	}
 
 	public Collection<Review> getReviews() {
@@ -42,7 +45,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category Title" + categoryTitle;
+		return "Category Title" + title;
 	}
 
 	

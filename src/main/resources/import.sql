@@ -1,10 +1,21 @@
-// initialize customers
+
+INSERT INTO category(title) VALUES('foo')
+INSERT INTO category(title) VALUES('faa')
+INSERT INTO category(title) VALUES('fee')
 
 
-//INSERT INTO REVIEW(ID, CONTENT, IMAGE_URL, REVIEW_CATEGORY, TITLE, PRIMARY[*] KEY) VALUES(42, 'mama', 'baba', 'dada', 'bibi')
-INSERT INTO REVIEW(CONTENT, IMAGE_URL, REVIEW_CATEGORY, TITLE, PRIMARY[*] KEY) VALUES('mama', 'baba', 'dada', 'bibi', 5)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('mama', 'baba', 'dada', 1)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('khj', 'nhn', 'kkk', 1)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('vxhjs', 'xbjhs', 'hhjshj', 1)
 
-// initialize orders
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('hshj', 'jbcjb', 'vjhsvj', 2)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES(' jksbk', 'bjksab', 'jbjhsbj', 2)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('jksbk', 'nlkdnk', ' jdbj', 2)
 
-//INSERT INTO Category(order_number, customer_id) VALUES('foo', 42)
-//INSERT INTO Categoty(order_number, customer_id) VALUES('bar', 42)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('nkjank', 'nlkank', 'kjwkj', 3)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('njksank', 'kjank', 'knak', 3)
+INSERT INTO REVIEW(CONTENT, IMAGE_URL, TITLE, CATEGORY_ID) VALUES('mlsl', 'nlkanl', 'nlkanlk', 3)
+
+
+
+
