@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Category {
 	
@@ -21,6 +23,7 @@ public class Category {
 	// mappedBy: because in the database, things point the other direction
 	// mappedBy "category" is referring to Categories.review
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
 	private Collection<Review> reviews;  //this need to be a Collection of Review instances
 	

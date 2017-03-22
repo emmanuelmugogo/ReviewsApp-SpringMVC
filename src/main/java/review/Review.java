@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Review {
 	
@@ -18,7 +20,7 @@ public class Review {
 	private String imageUrl;
 	private String content;
 	
-	@ManyToOne
+	@ManyToOne 
 	private Category category;
 	
 	//spring jpa requires no arg constructor
