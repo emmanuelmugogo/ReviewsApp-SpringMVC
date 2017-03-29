@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+      <title>Review MVC</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+      <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" media="all" href="../../css/review.css" th:href="@{/css/review.css}" />
+  </head>
+    <body>
+    <div class="container">
+    	<br/>
+    	<br/>
+    	<br/>
+    	<div class="jumbotron">
+	    	<div class="text-center">
+	    		<h1>REVIEWS</h1>
+        		<h2>Click <a href="/reviews/all">here</a> to get all reviews collection</h2>
+	    	</div>
+	    	
+	    	<div>
+            	<p id="review-Id">ID -  </p>
+            	<p id="review-Title">Title - </p>
+            	<p id="review-imageUrl"> Image - </p>
+            	<p id="review-category"> Category - </p>
+            	<p id="review-content"> Content - </p>
+            	
+        	</div>
+    		
+    	</div>
+    </div>
+        
+            
+    <script src="http://code.jquery.com/jquery.js"></script>
+  	<script src="/js/bootstrap.min.js"></script>
+  	<script src="/js/reviews.js"></script>
+    </body>
+</html>
